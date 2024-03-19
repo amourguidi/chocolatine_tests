@@ -1,0 +1,10 @@
+name: size
+
+on: [push]
+
+jobs: 
+  size_job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo du -skh --exclude=".git"
