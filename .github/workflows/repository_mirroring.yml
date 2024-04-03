@@ -9,6 +9,6 @@ jobs:
       - uses: pixta-dev/repository-mirroring-action@v1
         with:
           target_repo_url:
-            git@github.com:EpitechPromo2028/B-CPE-110-COT-1-1-bssecured-amour.guidi.git
+            "git@github.com:EpitechPromo2028/B-DOP-200-COT-2-1-chocolatine-amour.guidi.git"
           ssh_private_key:
             ${{ secrets.GIT_SSH_PRIVATE_KEY }}
