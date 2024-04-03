@@ -27,5 +27,6 @@ jobs:
       - uses: actions/checkout@v4
       - id: check_program_compilation
         run: make
-        run: make clean
         timeout-minutes: 2
+        run: make clean
+        
