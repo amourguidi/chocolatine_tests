@@ -17,13 +17,15 @@ jobs:
       image: ghcr.io/epitech/coding-style-checker:latest
     steps:
       - uses: actions/checkout@v4
-      - run: check.sh $(pwd) $(pwd)
+      - id: check_coding_style
+        run: check.sh $(pwd) $(pwd)
   
   check_program_compilation:
     runs-on: ubuntu-latest
     container: epitechcontent/epitest-docker
     steps:
       - uses: actions/checkout@v4
-      - run: make
-      - timeout-minutes: 2
-      - run: make clean
+      - id: check_program_compilation
+        run: make
+        timeout-minutes: 2
+        run: make clean
