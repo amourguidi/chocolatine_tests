@@ -2,16 +2,13 @@ name: coding-style
 
 on:
   push:
-    branches:
-      - main
-
+    branches-ignore:
+      - 'ga-ignore-*'
   pull_request:
-    branches:
-      - main
 
 env: 
-  - MIRROR_URL: "git@github.com:EpitechPromo2028/B-DOP-200-COT-2-1-chocolatine-amour.guidi.git"
-  - EXECUTABLES: "minicut"
+  MIRROR_URL: "git@github.com:EpitechPromo2028/B-DOP-200-COT-2-1-chocolatine-amour.guidi.git"
+  EXECUTABLES: "minicut"
 
 jobs:
   check_coding_style:
