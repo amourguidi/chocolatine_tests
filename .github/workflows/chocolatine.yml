@@ -28,4 +28,3 @@ jobs:
       - id: check_program_compilation
         run: make
         timeout-minutes: 2
-        run: make clean
