@@ -26,11 +26,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: it_make
-        id: check_program_compilation
         run: make
         timeout-minutes: 2
       - name: it_make_clean
-        id: check_program_compilation
         run: make clean
         
         
