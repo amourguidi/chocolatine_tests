@@ -30,3 +30,13 @@ fclean: clean
 	rm -f $(NAME) $(autre) unit_tests
 
 re: fclean all
+
+unit_tests: 	fclean unit_tests
+			gcc $(SRC) tests/*.c -o unit_tests \
+			-coverage -lcriterion -lgcov
+
+tests_run: unit_tests
+		./unit_tests
+		gcovr
+		gcovr --exclude tests/
+		gcovr --exclude tests/ --branches
