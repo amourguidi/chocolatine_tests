@@ -8,7 +8,8 @@
 SRC		=	my_putchar.c	\
 			my_putstr.c	\
 			my_str_to_word_array.c\
-			my_getnbr.c
+			my_getnbr.c	\
+			my_strlen.c
 
 OBJ		=	$(SRC:.c=.o)
 
@@ -17,6 +18,9 @@ NAME	=	minicut
 autre = *~ \
 		*.log \
 		.out \
+		*.gcov \
+		*.gcno \
+		*.gcda	\
 
 all: 	$(NAME)
 
