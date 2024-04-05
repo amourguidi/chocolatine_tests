@@ -19,12 +19,13 @@ jobs:
       image: ghcr.io/epitech/coding-style-checker:latest
     steps:
       - uses: actions/checkout@v4
-      - id: check_coding_style
+      - name: check_coding_style
         run: check.sh $(pwd) $(pwd)
+      - name: display
         run: |
           input=/chocolatine_tests/coding-style-reports.log
-          while IFS= read -r -a line; do
-            array=($(printf "%s" "$line"|cut -d':' --output-delimiter=' ' -f1-))
+          while IFS= read -r line; do
+            array=($(printf "%s" "$line" | cut -d':' --output-delimiter=' ' -f1-))
             echo "::error title=${array[2]} coding style error,file=${array[0]},line=${array[1]}::${array[3]}"
           done < $input
 
@@ -39,7 +40,16 @@ jobs:
         timeout-minutes: 2
       - name: it_make_clean
         run: make clean
-        
+      - name: verify
+        run: |
+          IFS=',' read -ra executables <<< "${EXECUTABLES}"
+          for executable in "${executables[@]}"; do
+            if [[ ! -x "${executable}" ]]; then
+              echo "Error: Rakib, ${executable} d'ont exist, check correctly and try again"
+              exit 84
+            fi
+          done
+
   run_tests:
     needs: check_program_compilation
     runs-on: ubuntu-latest
