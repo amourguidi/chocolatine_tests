@@ -21,7 +21,6 @@ int flag_c(int ac, char **av, char **array)
     }
 }
 
-
 void for_d(int ac, char **av, char **array, int i)
 {
     for (int j = 0; array[i][j] != '\0'; j++) {
