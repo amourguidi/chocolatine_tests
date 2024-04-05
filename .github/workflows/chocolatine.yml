@@ -23,7 +23,7 @@ jobs:
         run: check.sh $(pwd) $(pwd)
       - name: display
         run: |
-        input=/current/coding-style-reports.log
+        input=$(pwd)/coding-style-reports.log
         while IFS= read -r -a line; do
           array=($(printf "%s" "$line"|cut -d':' --output-delimiter=' ' -f1-))
           echo "::error title=${array[2]} coding style error,file=${array[0]},line=${array[1]}::${array[3]}"
