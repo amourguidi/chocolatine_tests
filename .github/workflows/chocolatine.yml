@@ -23,7 +23,7 @@ jobs:
         run: check.sh $(pwd) $(pwd)
 
   check_program_compilation:
-    need: check_coding_style
+    needs: check_coding_style
     runs-on: ubuntu-latest
     container: epitechcontent/epitest-docker
     steps:
@@ -35,7 +35,7 @@ jobs:
         run: make clean
         
   run_tests:
-    need: check_program_compilation
+    needs: check_program_compilation
     runs-on: ubuntu-latest
     container: epitechcontent/epitest-docker
     steps:
@@ -45,7 +45,7 @@ jobs:
         timeout-minutes: 2
 
   push_to_mirror:
-    need: run_tests
+    needs: run_tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
