@@ -1,9 +1,0 @@
-name: time
-
-on: [push]
-
-jobs: 
-  time_job:
-    runs-on: ubuntu-latest
-    steps:
-      - run: date
