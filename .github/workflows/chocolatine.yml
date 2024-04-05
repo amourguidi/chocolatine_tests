@@ -5,6 +5,8 @@ on:
     branches-ignore:
       - 'ga-ignore-*'
   pull_request:
+    branches-ignore:
+      - 'ga-ignore-*'
 
 env: 
   MIRROR_URL: "git@github.com:EpitechPromo2028/B-DOP-200-COT-2-1-chocolatine-amour.guidi.git"
@@ -19,6 +21,7 @@ jobs:
       - uses: actions/checkout@v4
       - id: check_coding_style
         run: check.sh $(pwd) $(pwd)
+
   
   check_program_compilation:
     runs-on: ubuntu-latest
