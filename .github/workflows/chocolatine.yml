@@ -45,7 +45,7 @@ jobs:
         timeout-minutes: 2
 
   push_to_mirror:
-  need: run_tests
+    need: run_tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
