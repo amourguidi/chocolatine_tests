@@ -19,7 +19,6 @@ int flag_c(int ac, char **av, char **array)
             my_putchar('\n');
         }
     }
-
 }
 
 void for_d(int ac, char **av, char **array, int i)
